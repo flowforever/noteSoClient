@@ -8,18 +8,16 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
+import { Container, Button, Text } from 'native-base';
 
 const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+  ios: 'You are using ios',
+  android: 'You are using android',
 });
 
-export default class App extends Component<{}> {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -27,22 +25,32 @@ export default class App extends Component<{}> {
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
           {instructions}
         </Text>
+
+        <View>
+          <Button style={styles.button}>
+            <Text>
+              Button 1
+            </Text>
+          </Button>
+        </View>
       </View>
     );
   }
 }
 
+function onPressLearnMore() {}
+
 const styles = StyleSheet.create({
   container: {
+    marginTop: 60,
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  button: {
+    justifyContent: 'center'
   },
   welcome: {
     fontSize: 20,
