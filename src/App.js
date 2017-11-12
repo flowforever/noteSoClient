@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
     button: {
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     welcome: {
         fontSize: 20,
