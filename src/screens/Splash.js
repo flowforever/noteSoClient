@@ -1,5 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import * as Progress from 'react-native-progress';
+
 
 const styles = StyleSheet.create({
     container: {
@@ -25,6 +27,7 @@ const styles = StyleSheet.create({
 export default function Splash() {
     return <View style={styles.container}>
         <Text style={styles.welcome}> Loading </Text>
+        <Progress.Bar progress={0.3} width={200} />
     </View>;
 }
 
