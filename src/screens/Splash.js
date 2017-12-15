@@ -8,14 +8,15 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         flexDirection: 'column',
-        justifyContent: 'flex-end',
         backgroundColor: '#F5FCFF',
     },
-    loadingText: {
-        marginBottom: 5,
+    rest:{
+        flex: 1,
     },
-    progress: {
-        marginBottom: 15,
+    loadingText: {
+    },
+    fixHeight: {
+        height: 40
     }
 });
 
@@ -41,7 +42,7 @@ export default class Splash extends React.Component {
                         index: 0,
                         actions: [NavigationActions.navigate({routeName: 'Home'})],
                     });
-                    this.props.navigation.dispatch(toHome);
+                    //this.props.navigation.dispatch(toHome);
                 }, timeFrame);
             } else {
                 let random = Math.random() * 0.5;
@@ -56,11 +57,12 @@ export default class Splash extends React.Component {
     }
 
     render() {
-        const width = Dimensions.get('window').width * 0.64;
+        const width = Dimensions.get('window').width * 0.95;
 
         return <View style={styles.container}>
-            <Text style={styles.loadingText}>Loading...</Text>
-            <View style={styles.progress}>
+            <View style={styles.rest}></View>
+            <Text style={[styles.loadingText, styles.fixHeight]}>Loading...</Text>
+            <View style={styles.fixHeight}>
                 <Progress.Bar progress={this.state.progress} width={width} height={2}/>
             </View>
         </View>;
