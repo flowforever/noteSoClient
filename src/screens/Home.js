@@ -1,45 +1,51 @@
 import React from 'react';
-
-import {
-    DrawerNavigator,
-    StackNavigator
-} from 'react-navigation';
-import {Platform, StyleSheet, View, Text, Button} from 'react-native';
+import {StyleSheet, View, Text, TextInput, Button, Alert} from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 60,
         flex: 1,
-        alignItems: 'center',
+        flexDirection: 'column',
+    },
+    header: {
+        paddingTop: 35,
         backgroundColor: '#F5FCFF',
+        alignItems: 'center',
+        height: 55
     },
-    button: {
-        justifyContent: 'center',
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
+    editor: {
+        flex: 1,
+    }
 });
 
-export default function Home() {
-    return (
-        <View style={styles.container}>
-            <Text style={styles.welcome}>
-                Welcome to React Native!
-            </Text>
+export default class Home extends React.Component{
 
-            <View>
-                <Button style={styles.button} title={'Bu'} onPress={e=>e}></Button>
+    state = {
+        text: 'ok'
+    };
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <View style={styles.header}>
+                    <Text>
+                        Welcome to React Native! 123
+                    </Text>
+                </View>
+                <View style={styles.editor}>
+                    <TextInput
+                        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                        onChangeText={(text) => this.setState({text})}
+                        value={this.state.text}
+                    />
+                    <Button title={'Bu'} onPress={e => this.onClick()}></Button>
+                </View>
             </View>
-        </View>
-    );
+        );
+    }
+
+    onClick() {
+        Alert.alert(`Hello`)
+    }
 }
 
 Home.navigationOptions = {

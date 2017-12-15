@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     }
 });
 
-const timeFrame = 200;
+const timeFrame = 50;
 
 
 export default class Splash extends React.Component {
@@ -67,6 +67,7 @@ export default class Splash extends React.Component {
             </View>
         </View>;
     }
+
 }
 
 Splash.navigationOptions = {
