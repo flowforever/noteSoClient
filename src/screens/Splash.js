@@ -42,7 +42,7 @@ export default class Splash extends React.Component {
                         index: 0,
                         actions: [NavigationActions.navigate({routeName: 'Home'})],
                     });
-                    //this.props.navigation.dispatch(toHome);
+                    this.props.navigation.dispatch(toHome);
                 }, timeFrame);
             } else {
                 let random = Math.random() * 0.5;
